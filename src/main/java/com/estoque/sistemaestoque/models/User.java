@@ -31,10 +31,14 @@ public class User {
     @Column(name = "id", unique = true)
     private Long id;
 
-    @Column(name = "username", length = 100, nullable = false, unique = true)
+    @Column(name = "name", length = 100, nullable = false, unique = true)
     @NotBlank(groups = CreateUser.class)
     @Size(groups = CreateUser.class, min = 2, max = 100)
-    private String username;
+    private String name;
+
+    @Column(name = "email", length = 150, nullable = false, unique = true)
+    @NotBlank(groups = CreateUser.class)
+    private String email;
 
     @JsonProperty(access = Access.WRITE_ONLY)
     @Column(name = "password", length = 60, nullable = false)
@@ -45,9 +49,9 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String username, String password) {
+    public User(Long id, String name, String password) {
         this.id = id;
-        this.username = username;
+        this.name = name;
         this.password = password;
     }
 
@@ -59,12 +63,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -89,7 +93,7 @@ public class User {
                 return false;
             else if (!this.id.equals(other.id))
                 return false;
-        return Objects.equals(this.id, other.id) && Objects.equals(this.username, other.username)
+        return Objects.equals(this.id, other.id) && Objects.equals(this.name, other.name)
                 && Objects.equals(this.password, other.password);
     }
 
