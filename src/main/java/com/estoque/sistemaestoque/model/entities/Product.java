@@ -1,6 +1,9 @@
 package com.estoque.sistemaestoque.model.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,20 +20,28 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     @Column(nullable = false)
     private String name;
 
+    @NotBlank
     @Column(nullable = false, unique = true)
-    private String SKU;
+    private String sku;
 
     private String description;
 
+    @NotNull
+    @PositiveOrZero
     @Column(nullable = false, precision = 12, scale = 2)
     private BigDecimal price;
 
+    @NotNull
+    @PositiveOrZero
     @Column(nullable = false)
     private Integer quantity;
 
+    @NotNull
+    @PositiveOrZero
     @Column(nullable = false)
     private Integer minQuantity = 0;
 

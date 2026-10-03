@@ -34,7 +34,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", length = 100, nullable = false, unique = true)
+    @Column(name = "name", length = 100, nullable = false)
     @NotBlank(groups = CreateUser.class)
     @Size(groups = CreateUser.class, min = 2, max = 100)
     private String name;
