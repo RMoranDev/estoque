@@ -19,9 +19,9 @@ public class ProductService {
     private final CategoryRepository categoryRepository;
 
     @Transactional
-    public Product created(Product product, Long categoryId) {
+    public Product create(Product product, Long categoryId) {
         if (productRepository.existsBySku(product.getSku())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "SKU ja cadastrado");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "SKU já cadastrado");
         }
 
         Category category = categoryRepository.findById(categoryId)

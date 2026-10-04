@@ -25,7 +25,7 @@ public class Product {
     private String name;
 
     @NotBlank
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 50)
     private String sku;
 
     private String description;
