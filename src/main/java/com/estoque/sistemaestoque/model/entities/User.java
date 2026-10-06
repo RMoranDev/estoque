@@ -3,8 +3,6 @@ package com.estoque.sistemaestoque.model.entities;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -24,6 +22,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class User {
+
     public interface CreateUser {
     }
 
@@ -34,7 +33,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", length = 100, nullable = false)
+    @Column(name = "name", length = 150, nullable = false)
     @NotBlank(groups = CreateUser.class)
     @Size(groups = CreateUser.class, min = 2, max = 100)
     private String name;
@@ -43,8 +42,11 @@ public class User {
     @NotBlank(groups = CreateUser.class)
     private String email;
 
+    @Column(nullable = false)
+    private boolean active = true;
+
     @JsonProperty(access = Access.WRITE_ONLY)
-    @Column(name = "password", length = 60, nullable = false)
+    @Column(name = "password", length = 255, nullable = false)
     @NotBlank(groups = {CreateUser.class, UpdateUser.class})
     @Size(groups = {CreateUser.class, UpdateUser.class}, min = 8, max = 60)
     private String password;
