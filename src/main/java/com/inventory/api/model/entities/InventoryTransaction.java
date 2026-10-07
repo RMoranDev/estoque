@@ -1,8 +1,8 @@
-package com.estoque.sistemaestoque.model.entities;
+package com.inventory.api.model.entities;
 
 import java.time.LocalDateTime;
 
-import com.estoque.sistemaestoque.model.enums.TransactionType;
+import com.inventory.api.model.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

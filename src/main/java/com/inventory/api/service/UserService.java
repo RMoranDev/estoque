@@ -1,10 +1,10 @@
-package com.estoque.sistemaestoque.service;
+package com.inventory.api.service;
 
-import com.estoque.sistemaestoque.model.dto.UserCreateRequest;
-import com.estoque.sistemaestoque.model.dto.UserResponse;
-import com.estoque.sistemaestoque.model.dto.UserUpdateRequest;
-import com.estoque.sistemaestoque.model.entities.User;
-import com.estoque.sistemaestoque.repository.UserRepository;
+import com.inventory.api.model.dto.UserCreateRequest;
+import com.inventory.api.model.dto.UserResponse;
+import com.inventory.api.model.dto.UserUpdateRequest;
+import com.inventory.api.model.entities.User;
+import com.inventory.api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -76,8 +76,23 @@ public class UserService {
         return toResponse(existingUser);
     }
 
-    public void deactivateUser(Long userId) {}
-    public void activateUser(Long userId) {}
+    @Transactional
+    public void deactivateUser(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Usuário não encontrado"));
+        user.setActive(false);
+    }
+
+    @Transactional
+    public void activateUser(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Usuário não encontrado"));
+        user.setActive(true);
+    }
 
     private UserResponse toResponse(User user) {
         return new UserResponse(user.getId(), user.getName(), user.getEmail(), user.isActive());

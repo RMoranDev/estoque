@@ -1,12 +1,12 @@
-package com.estoque.sistemaestoque.service;
+package com.inventory.api.service;
 
-import com.estoque.sistemaestoque.model.entities.InventoryTransaction;
-import com.estoque.sistemaestoque.model.entities.Product;
-import com.estoque.sistemaestoque.model.entities.User;
-import com.estoque.sistemaestoque.model.enums.TransactionType;
-import com.estoque.sistemaestoque.repository.InventoryTransactionRepository;
-import com.estoque.sistemaestoque.repository.ProductRepository;
-import com.estoque.sistemaestoque.repository.UserRepository;
+import com.inventory.api.model.entities.InventoryTransaction;
+import com.inventory.api.model.entities.Product;
+import com.inventory.api.model.entities.User;
+import com.inventory.api.model.enums.TransactionType;
+import com.inventory.api.repository.InventoryTransactionRepository;
+import com.inventory.api.repository.ProductRepository;
+import com.inventory.api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

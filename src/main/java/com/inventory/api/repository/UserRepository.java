@@ -1,6 +1,6 @@
-package com.estoque.sistemaestoque.repository;
+package com.inventory.api.repository;
 
-import com.estoque.sistemaestoque.model.entities.User;
+import com.inventory.api.model.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

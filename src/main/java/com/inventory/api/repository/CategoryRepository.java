@@ -1,8 +1,6 @@
-package com.estoque.sistemaestoque.repository;
+package com.inventory.api.repository;
 
-import com.estoque.sistemaestoque.model.entities.Category;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import com.inventory.api.model.entities.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

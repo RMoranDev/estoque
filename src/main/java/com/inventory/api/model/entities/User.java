@@ -1,4 +1,4 @@
-package com.estoque.sistemaestoque.model.entities;
+package com.inventory.api.model.entities;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

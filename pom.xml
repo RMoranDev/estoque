@@ -9,8 +9,8 @@
 		<version>4.1.1</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.estoque</groupId>
-	<artifactId>sistema-estoque</artifactId>
+	<groupId>com.inventory.api</groupId>
+	<artifactId>inventory-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name />
 	<description />

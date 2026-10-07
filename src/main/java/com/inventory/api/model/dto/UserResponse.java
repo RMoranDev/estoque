@@ -1,4 +1,4 @@
-package com.estoque.sistemaestoque.model.dto;
+package com.inventory.api.model.dto;
 
 public record UserResponse(
         Long id,

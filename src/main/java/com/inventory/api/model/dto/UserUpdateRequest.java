@@ -1,19 +1,20 @@
-package com.estoque.sistemaestoque.model.dto;
+package com.inventory.api.model.dto;
 
-import com.estoque.sistemaestoque.model.entities.User;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-public record UserCreateRequest(
+public record UserUpdateRequest(
+        @NotBlank
         @Size(min = 2, max = 100)
         String name,
 
+        @NotBlank
         @Email
         @Size(max = 150)
         String email,
 
+        @NotBlank
         @Size(min = 8, max = 60)
-        String password
-) {}
+        String password) {
+}

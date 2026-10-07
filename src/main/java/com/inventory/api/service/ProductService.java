@@ -1,9 +1,9 @@
-package com.estoque.sistemaestoque.service;
+package com.inventory.api.service;
 
-import com.estoque.sistemaestoque.model.entities.Category;
-import com.estoque.sistemaestoque.model.entities.Product;
-import com.estoque.sistemaestoque.repository.CategoryRepository;
-import com.estoque.sistemaestoque.repository.ProductRepository;
+import com.inventory.api.model.entities.Category;
+import com.inventory.api.model.entities.Product;
+import com.inventory.api.repository.CategoryRepository;
+import com.inventory.api.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
