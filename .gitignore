@@ -20,3 +20,4 @@ Thumbs.db
 
 # Arquivos temporários
 *.tmp
+/tarefa.md
