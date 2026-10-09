@@ -33,8 +33,8 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<UserResponse>> findAll() {
-        List<UserResponse> userResponse = userService.findAll();
-        return ResponseEntity.ok(userResponse);
+        List<UserResponse> userResponseList = userService.findAll();
+        return ResponseEntity.ok(userResponseList);
     }
 
     @PatchMapping("/{id}")

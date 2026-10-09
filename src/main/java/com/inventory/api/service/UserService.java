@@ -26,6 +26,7 @@ public class UserService {
         if (userRepository.existsByEmail(request.email())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "E-mail já cadastrado");
         }
+
         User user = new User();
         user.setName(request.name());
         user.setEmail(request.email());
